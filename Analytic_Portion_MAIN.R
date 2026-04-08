@@ -2,13 +2,10 @@ library(tidyverse)
 library(tidycensus)
 #built in to tidycensus package
 data(fips_codes)
-library(staggered)
-library(plm)
 library(fixest)
 library(iplots)
 library(car)
 library(modelsummary)
-library(gt)
 library(flextable)
 
 
