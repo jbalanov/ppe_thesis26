@@ -4,9 +4,9 @@ library(stargazer)
 library(flextable)
 library(mediation)
 library(DiagrammeR)
-setwd("C:\\Users\\Jackie\\Dropbox\\PPE Thesis Jackie\\")
 
-survey <- read.csv("experimental_data_jb_thesis.csv")
+#not included in git to not be publicly shared
+survey <- read.csv("experimental_data_thesis.csv")
 
 ###get all incomplete and test responses
 survey_clean <- survey %>%
@@ -18,7 +18,8 @@ survey_clean <- survey %>%
   tail(-2) %>%
   #i deleted all emails out of the column but kept my own to 
   #delete this rogue test observation!
-  filter(email != "jackieba@sas.upenn.edu") 
+  #removed email for anonimity 
+  #filter(email != "") 
 
 
 ###reshape data 
@@ -370,5 +371,4 @@ chart_long <- chart %>%
 
 #chart_long %>% write.csv("chartaccuracy.csv")
 
-#library(report)
-#cite_packages
+
