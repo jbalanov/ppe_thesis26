@@ -9,8 +9,6 @@ library(modelsummary)
 library(flextable)
 
 
-setwd("C:\\Users\\Jackie\\Dropbox\\PPE Thesis Jackie\\CleanData")
-
 #directory list
 files <- list.files(getwd(), pattern = "\\.csv$", full.names = TRUE)
 
@@ -92,10 +90,10 @@ nas <- states_clean %>% filter(is.na(count))
 #states_clean %>% write.csv("C:\\Users\\Jackie\\Dropbox\\PPE Thesis Jackie\\full_clean_new.csv")
 
 ###combine all###
-ccc_all <- read.csv("C:\\Users\\Jackie\\Dropbox\\PPE Thesis Jackie\\ccc_all.csv")
+ccc_all <- read.csv("ccc_all.csv")
 #not aggregated by month-state
-ccc_nonagg <- read.csv("C:\\Users\\Jackie\\Dropbox\\PPE Thesis Jackie\\ccc_nonagg.csv")
-census <- read.csv("C:\\Users\\Jackie\\Dropbox\\PPE Thesis Jackie\\censuspops.csv") 
+ccc_nonagg <- read.csv("ccc_nonagg.csv")
+census <- read.csv("censuspops.csv") 
 
 ccc_all <- ccc_all %>% mutate(date = ym(paste0(year, "-", month)))
 ccc_nonagg <- ccc_nonagg %>% mutate(date = ym(paste0(year, "-", month)),
